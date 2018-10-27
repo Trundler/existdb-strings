@@ -41,14 +41,14 @@
 
     <!-- include the XQuery Library modules written in XQuery from this project -->
     <xquerySets>
-        <xquerySet>
-            <namespace>https://my-organisation.com/exist-db/ns/app/my-xquery-module</namespace>
-            <directory>${basedir}/src/main/xquery</directory>
-            <includes>
-                <include>example-module.xqm</include>
-            </includes>
-            <outputDirectory>content</outputDirectory>
-        </xquerySet>
+        <!--<xquerySet>-->
+            <!--<namespace>https://my-organisation.com/exist-db/ns/app/my-xquery-module</namespace>-->
+            <!--<directory>${basedir}/src/main/xquery</directory>-->
+            <!--<includes>-->
+                <!--<include>example-module.xqm</include>-->
+            <!--</includes>-->
+            <!--<outputDirectory>content</outputDirectory>-->
+        <!--</xquerySet>-->
     </xquerySets>
 
     <!-- include the XQuery Library Module written in Java (JAR output) from this project -->
@@ -58,13 +58,23 @@
             <artifactId>${project.artifactId}</artifactId>
             <version>${project.version}</version>
         </dependencySet>
+        <dependencySet>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-text</artifactId>
+        <version>1.6</version>
+    </dependencySet>
+
     </dependencySets>
 
     <!-- register the Java module to eXist-db -->
     <components>
         <resource>
-            <public-uri>${example.module.namespace}</public-uri>
-            <file>urn:java:class:org.exist.extensions.${example.module.java.classname}</file>
+            <public-uri>http://exist-db.org/extension/strings/distance</public-uri>
+            <file>urn:java:class:org.exist.extensions.strings.DistanceModule</file>
+        </resource>
+        <resource>
+            <public-uri>http://exist-db.org/extension/strings/codec</public-uri>
+            <file>urn:java:class:org.exist.extensions.strings.CodecModule</file>
         </resource>
     </components>
 

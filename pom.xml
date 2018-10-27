@@ -48,7 +48,7 @@
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
 
-        <exist.version>3.6.1</exist.version>
+        <exist.version>4.3.1</exist.version>
 
         <!-- used in the EXPath Package Descriptor -->
         <package-name>https://my-organisation.com/exist-db/app</package-name>
@@ -62,6 +62,23 @@
             <groupId>org.exist-db</groupId>
             <artifactId>exist-core</artifactId>
             <version>${exist.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exist-db</groupId>
+            <artifactId>exist-optional</artifactId>
+            <version>${exist.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.exist-db</groupId>
+            <artifactId>exist-expath</artifactId>
+            <version>${exist.version}</version>
+        </dependency>
+
+        <!-- Third party -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.6</version>
         </dependency>
 
         <!-- test dependencies -->
