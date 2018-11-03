@@ -2,6 +2,8 @@
 Utility extension module for eXist-db that provides a mix of string functions.
 
 [![Build Status](https://travis-ci.com/Trundler/existdb-strings.svg?branch=master)](https://travis-ci.com/Trundler/existdb-strings)
+[![Java 8](https://img.shields.io/badge/java-8-blue.svg)](http://java.oracle.com)
+[![License](https://img.shields.io/badge/license-LGPL%202.1-blue.svg)](https://www.gnu.org/licenses/lgpl-2.1.html)
 
 ## Available functions
 
