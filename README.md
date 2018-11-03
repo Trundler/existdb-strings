@@ -1,6 +1,8 @@
 # existdb-strings
 Utility extension module for eXist-db that provides a mix of string functions.
 
+[![Build Status](https://travis-ci.com/Trundler/existdb-strings.svg?branch=master)](https://travis-ci.com/Trundler/existdb-strings)
+
 ## Available functions
 
 ### Distance
