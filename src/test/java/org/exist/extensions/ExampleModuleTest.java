@@ -1,7 +1,6 @@
 package org.exist.extensions;
 
 
-
 import org.exist.test.runner.XSuite;
 import org.junit.runner.RunWith;
 
