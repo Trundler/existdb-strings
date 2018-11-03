@@ -1,5 +1,5 @@
 # existdb-strings
-Utility module that provides a mix of string functions.
+Utility extension module for eXist-db that provides a mix of string functions.
 
 ## Available functions
 
