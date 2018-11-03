@@ -1,0 +1,8 @@
+language: java
+sudo: false
+matrix:
+  include:
+  - jdk: openjdk8
+  - jdk: oraclejdk8
+  - jdk: openjdk11
+  - jdk: oraclejdk11

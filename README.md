@@ -8,8 +8,8 @@ Utility module that provides a mix of string functions.
 Provides access to https://commons.apache.org/proper/commons-codec/
 
 - hamming#2
-- levenshtein
-- cosine
+- levenshtein#2
+- cosine#2
 
 ### Codec
 
