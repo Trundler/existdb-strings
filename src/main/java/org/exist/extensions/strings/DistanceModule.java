@@ -16,7 +16,7 @@ import static org.exist.xquery.FunctionDSL.functionDefs;
  */
 public class DistanceModule extends AbstractInternalModule {
 
-    public static final String NAMESPACE_URI = "http://exist-db.org/extension/strings/distance";
+    public static final String NAMESPACE_URI = "http://exist-db.org/extensions/strings/distance";
     public static final String PREFIX = "distance";
     public static final String RELEASED_IN_VERSION = "eXist-3.6.0";
 
@@ -26,7 +26,6 @@ public class DistanceModule extends AbstractInternalModule {
                 DistanceFunctions.FS_LEVENSHTEIN,
                 DistanceFunctions.FS_COSINE,
                 DistanceFunctions.FS_HAMMING
-
         )
     );
 

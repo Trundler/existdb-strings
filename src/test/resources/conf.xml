@@ -720,7 +720,7 @@
             raise-error-on-failed-retrieval="no">
 
         <builtin-modules>
-            <module uri="https://my-organisation.com/exist-db/ns/app/my-java-module" class="org.exist.extensions.ExampleModule"/>
+            <!--module uri="https://my-organisation.com/exist-db/ns/app/my-java-module" class="org.exist.extensions.ExampleModule"/-->
         </builtin-modules>
     </xquery>
 

@@ -4,10 +4,7 @@ import org.apache.commons.codec.language.ColognePhonetic;
 import org.apache.commons.codec.language.Metaphone;
 import org.apache.commons.codec.language.Nysiis;
 import org.apache.commons.codec.language.Soundex;
-import org.exist.xquery.BasicFunction;
-import org.exist.xquery.FunctionSignature;
-import org.exist.xquery.XPathException;
-import org.exist.xquery.XQueryContext;
+import org.exist.xquery.*;
 import org.exist.xquery.value.Sequence;
 import org.exist.xquery.value.StringValue;
 import org.exist.xquery.value.Type;
@@ -62,6 +59,7 @@ public class CodecFunctions extends BasicFunction {
 
     @Override
     public Sequence eval(final Sequence[] args, final Sequence contextSequence) throws XPathException {
+
 
         final String str = args[0].getStringValue();
 

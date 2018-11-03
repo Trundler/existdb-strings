@@ -2,14 +2,13 @@
 <package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
     spec="1.0">
     <title>${package-title}</title>
-    <author id="my-organisation">My Organisation</author>
+    <author id="dizzzz">Dannes Wessels</author>
     <website>${project.url}</website>
     <license>GNU Lesser General Public License, version 2.1</license>
     <copyright>true</copyright>
 
     <!-- should be either "application" or "library" -->
-    <type>application</type>
-    <!-- type>library</type -->
+    <type>library</type>
 
     <status>stable</status>
 
@@ -69,13 +68,26 @@
     <!-- register the Java module to eXist-db -->
     <components>
         <resource>
-            <public-uri>http://exist-db.org/extension/strings/distance</public-uri>
+            <public-uri>http://exist-db.org/extensions/strings/distance</public-uri>
             <file>urn:java:class:org.exist.extensions.strings.DistanceModule</file>
         </resource>
         <resource>
-            <public-uri>http://exist-db.org/extension/strings/codec</public-uri>
+            <public-uri>http://exist-db.org/extensions/strings/codec</public-uri>
             <file>urn:java:class:org.exist.extensions.strings.CodecModule</file>
         </resource>
     </components>
+
+    <!-- Additional info -->
+    <note>When upgrading: please first uninstall all previous versions and restart eXist-db.</note>
+    <changelog>
+        <change version="0.0.0">
+            <ul xmlns="http://www.w3.org/1999/xhtml">
+                <li>Initial version</li>
+            </ul>
+        </change>
+    </changelog>
+
+    <description>This extension module provides access to functions of the apache.org commons-text and commons-codec libraries.</description>
+
 
 </package>

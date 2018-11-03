@@ -15,13 +15,13 @@
     <artifactId>existdb-strings</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>Example App</name>
-    <description>Example App for eXist-db</description>
-    <url>https://my-organisation.com/exist-db/app</url>
+    <name>Strings Module</name>
+    <description>This extension module provides access to functions of the apache.org commons-text and commons-codec libraries.</description>
+    <url>https://github.com/Trundler/existdb-strings</url>
 
     <organization>
-        <name>My Organisation</name>
-        <url>http://my-organisation.com</url>
+        <name>eXist-db</name>
+        <url>http://www.exist-db.org</url>
     </organization>
 
     <licenses>
@@ -33,14 +33,14 @@
     </licenses>
 
     <scm>
-        <url>https://www.github.com/my-organisation/example-exist-app.git</url>
-        <connection>scm:git:https://www.github.com/my-organisation/example-exist-app.git</connection>
-        <developerConnection>scm:git:https://www.github.com/my-organisation/example-exist-app.git</developerConnection>
+        <url>https://github.com/Trundler/existdb-strings.git</url>
+        <connection>scm:git:https://github.com/Trundler/existdb-strings.git</connection>
+        <developerConnection>scm:git:https://github.com/Trundler/existdb-strings.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://www.github.com/my-organisation/example-exist-app/issues</url>
+        <url>https://github.com/Trundler/existdb-strings/issues</url>
     </issueManagement>
 
     <properties>
@@ -51,10 +51,8 @@
         <exist.version>4.3.1</exist.version>
 
         <!-- used in the EXPath Package Descriptor -->
-        <package-name>https://my-organisation.com/exist-db/app</package-name>
+        <package-name>https://exist-db.org/extensions/strings</package-name>
 
-        <example.module.namespace>https://my-organisation.com/exist-db/ns/app/my-java-module</example.module.namespace>
-        <example.module.java.classname>ExampleModule</example.module.java.classname>
     </properties>
 
     <dependencies>

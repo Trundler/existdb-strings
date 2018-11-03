@@ -16,7 +16,7 @@ import static org.exist.xquery.FunctionDSL.functionDefs;
  */
 public class CodecModule extends AbstractInternalModule {
 
-    public static final String NAMESPACE_URI = "http://exist-db.org/extension/strings/codec";
+    public static final String NAMESPACE_URI = "http://exist-db.org/extensions/strings/codec";
     public static final String PREFIX = "codec";
     public static final String RELEASED_IN_VERSION = "eXist-3.6.0";
 
