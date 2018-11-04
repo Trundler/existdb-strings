@@ -22,15 +22,25 @@ public class DistanceModule extends AbstractInternalModule {
 
     // register the functions of the module
     public static final FunctionDef[] functions = functionDefs(
-        functionDefs(DistanceFunctions.class,
-                DistanceFunctions.FS_LEVENSHTEIN,
-                DistanceFunctions.FS_COSINE,
-                DistanceFunctions.FS_HAMMING
-        )
+            functionDefs(DistanceFunctions.class,
+                    DistanceFunctions.FS_LEVENSHTEIN,
+                    DistanceFunctions.FS_COSINE,
+                    DistanceFunctions.FS_HAMMING
+            )
     );
 
     public DistanceModule(final Map<String, List<? extends Object>> parameters) {
         super(functions, parameters);
+    }
+
+    static FunctionSignature functionSignature(final String name, final String description,
+                                               final FunctionReturnSequenceType returnType, final FunctionParameterSequenceType... paramTypes) {
+        return FunctionDSL.functionSignature(new QName(name, NAMESPACE_URI), description, returnType, paramTypes);
+    }
+
+    static FunctionSignature[] functionSignatures(final String name, final String description,
+                                                  final FunctionReturnSequenceType returnType, final FunctionParameterSequenceType[][] variableParamTypes) {
+        return FunctionDSL.functionSignatures(new QName(name, NAMESPACE_URI), description, returnType, variableParamTypes);
     }
 
     @Override
@@ -51,16 +61,6 @@ public class DistanceModule extends AbstractInternalModule {
     @Override
     public String getReleaseVersion() {
         return RELEASED_IN_VERSION;
-    }
-
-    static FunctionSignature functionSignature(final String name, final String description,
-            final FunctionReturnSequenceType returnType, final FunctionParameterSequenceType... paramTypes) {
-        return FunctionDSL.functionSignature(new QName(name, NAMESPACE_URI), description, returnType, paramTypes);
-    }
-
-    static FunctionSignature[] functionSignatures(final String name, final String description,
-            final FunctionReturnSequenceType returnType, final FunctionParameterSequenceType[][] variableParamTypes) {
-        return FunctionDSL.functionSignatures(new QName(name, NAMESPACE_URI), description, returnType, variableParamTypes);
     }
 
     static class ExpathBinModuleErrorCode extends ErrorCodes.ErrorCode {
