@@ -51,12 +51,26 @@ public class CodecFunctions extends BasicFunction {
             param("str", Type.STRING, "Input string")
     );
 
-
-
     private static final String COLOGNE_PHONETIC = "cologne-phonetic";
     static final FunctionSignature FS_COLOGNE_PHONETIC = functionSignature(
             COLOGNE_PHONETIC,
             "Encodes a String using the Cologne Phonetic algorithm.",
+            returns(Type.STRING),
+            param("str", Type.STRING, "Input string")
+    );
+
+    private static final String CAVERPHONE_1 = "caverphone1";
+    static final FunctionSignature FS_CAVERPHONE_1 = functionSignature(
+            CAVERPHONE_1,
+            "Encodes a String using the Caverphone1 algorithm.",
+            returns(Type.STRING),
+            param("str", Type.STRING, "Input string")
+    );
+
+    private static final String CAVERPHONE_2 = "caverphone2";
+    static final FunctionSignature FS_CAVERPHONE_2 = functionSignature(
+            CAVERPHONE_2,
+            "Encodes a String using the Caverphone2 algorithm.",
             returns(Type.STRING),
             param("str", Type.STRING, "Input string")
     );
@@ -92,6 +106,14 @@ public class CodecFunctions extends BasicFunction {
             case COLOGNE_PHONETIC:
                 final ColognePhonetic colognePhonetic = new ColognePhonetic();
                 return new StringValue(colognePhonetic.encode(str));
+
+            case CAVERPHONE_1:
+                final Caverphone1 caverPhone1 = new Caverphone1();
+                return new StringValue(caverPhone1.encode(str));
+
+            case CAVERPHONE_2:
+                final Caverphone2 caverPhone2 = new Caverphone2();
+                return new StringValue(caverPhone2.encode(str));
 
             default:
                 throw new XPathException(this, String.format("No function: %s#%d", getName(), getSignature().getArgumentCount()));
