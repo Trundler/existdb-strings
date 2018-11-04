@@ -6,3 +6,4 @@ matrix:
   - jdk: oraclejdk8
   - jdk: openjdk11
   - jdk: oraclejdk11
+  

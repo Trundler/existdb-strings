@@ -26,6 +26,7 @@ public class CodecModule extends AbstractInternalModule {
                     CodecFunctions.FS_SOUNDEX,
                     CodecFunctions.FS_NYSIIS,
                     CodecFunctions.FS_METAPHONE,
+                    CodecFunctions.FS_DOUBLEMETAPHONE,
                     CodecFunctions.FS_COLOGNE_PHONETIC
             )
     );

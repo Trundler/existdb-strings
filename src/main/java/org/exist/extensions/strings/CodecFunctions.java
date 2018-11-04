@@ -1,9 +1,6 @@
 package org.exist.extensions.strings;
 
-import org.apache.commons.codec.language.ColognePhonetic;
-import org.apache.commons.codec.language.Metaphone;
-import org.apache.commons.codec.language.Nysiis;
-import org.apache.commons.codec.language.Soundex;
+import org.apache.commons.codec.language.*;
 import org.exist.xquery.BasicFunction;
 import org.exist.xquery.FunctionSignature;
 import org.exist.xquery.XPathException;
@@ -46,6 +43,15 @@ public class CodecFunctions extends BasicFunction {
             param("str", Type.STRING, "Input string")
     );
 
+    private static final String DOUBLE_METAPHONE = "metaphone-double";
+    static final FunctionSignature FS_DOUBLEMETAPHONE = functionSignature(
+            DOUBLE_METAPHONE,
+            "Encodes a String using the Double Metaphone algorithm.",
+            returns(Type.STRING),
+            param("str", Type.STRING, "Input string")
+    );
+
+
 
     private static final String COLOGNE_PHONETIC = "cologne-phonetic";
     static final FunctionSignature FS_COLOGNE_PHONETIC = functionSignature(
@@ -78,6 +84,10 @@ public class CodecFunctions extends BasicFunction {
             case METAPHONE:
                 final Metaphone metaphone = new Metaphone();
                 return new StringValue(metaphone.encode(str));
+
+            case DOUBLE_METAPHONE:
+                final DoubleMetaphone doubleMetaphone = new DoubleMetaphone();
+                return new StringValue(doubleMetaphone.encode(str));
 
             case COLOGNE_PHONETIC:
                 final ColognePhonetic colognePhonetic = new ColognePhonetic();
