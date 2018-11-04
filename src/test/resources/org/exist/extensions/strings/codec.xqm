@@ -35,9 +35,31 @@ function c:metaphone($value as xs:string) {
 };
 
 declare
+    %test:arg("value", "four") %test:assertEquals("FR")
+    %test:arg("value", "twenty") %test:assertEquals("TNT")
+    %test:arg("value", "michael") %test:assertEquals("MKL")
+function c:metaphone-double($value as xs:string) {
+    codec:metaphone-double($value)
+};
+
+declare
     %test:arg("value", "Müller-Lüdenscheidt") %test:assertEquals("65752682")
     %test:arg("value", "Harry") %test:assertEquals("07")
     %test:arg("value", "Hari") %test:assertEquals("07")
 function c:cologne-phonetic($value as xs:string) {
     codec:cologne-phonetic($value)
+};
+
+declare
+    %test:arg("value", "Lee") %test:assertEquals("L11111")
+    %test:arg("value", "Thompson") %test:assertEquals("TMPSN1")
+function c:caverphone1($value as xs:string) {
+    codec:caverphone1($value)
+};
+
+declare
+    %test:arg("value", "Stevenson") %test:assertEquals("STFNSN1111")
+    %test:arg("value", "Peter") %test:assertEquals("PTA1111111")
+function c:caverphone2($value as xs:string) {
+    codec:caverphone2($value)
 };

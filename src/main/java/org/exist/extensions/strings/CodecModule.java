@@ -27,7 +27,9 @@ public class CodecModule extends AbstractInternalModule {
                     CodecFunctions.FS_NYSIIS,
                     CodecFunctions.FS_METAPHONE,
                     CodecFunctions.FS_DOUBLEMETAPHONE,
-                    CodecFunctions.FS_COLOGNE_PHONETIC
+                    CodecFunctions.FS_COLOGNE_PHONETIC,
+                    CodecFunctions.FS_CAVERPHONE_1,
+                    CodecFunctions.FS_CAVERPHONE_2
             )
     );
 
@@ -57,7 +59,7 @@ public class CodecModule extends AbstractInternalModule {
 
     @Override
     public String getDescription() {
-        return "Example Module for eXist-db XQuery";
+        return "Module for string functions and operations.";
     }
 
     @Override
