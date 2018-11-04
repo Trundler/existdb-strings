@@ -12,18 +12,21 @@ Utility extension module for eXist-db that provides a mix of string functions.
 
 Provides access to https://commons.apache.org/proper/commons-codec/
 
+- cosine#2
 - hamming#2
 - levenshtein#2
-- cosine#2
 
 ### Codec
 
 Provides access to https://commons.apache.org/proper/commons-text/ 
 
-- soundex#1
-- nysiis#1
-- metaphone#1
+- caverphone1#1
+- caverphone2#2
 - cologne-phonetic#1
+- metaphone#1
+- metaphone-double#1
+- nysiis#1
+- soundex#1
 
 ## Examples
 
