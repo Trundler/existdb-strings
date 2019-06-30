@@ -60,7 +60,7 @@
         <dependencySet>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
-            <version>1.6</version>
+            <version>${commons-text.version}</version>
         </dependencySet>
 
     </dependencySets>

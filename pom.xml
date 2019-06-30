@@ -50,7 +50,9 @@
         <project.build.source>1.8</project.build.source>
         <project.build.target>1.8</project.build.target>
 
-        <exist.version>4.3.1</exist.version>
+        <exist.version>4.7.0</exist.version>
+
+        <commons-text.version>1.6</commons-text.version>
 
         <!-- used in the EXPath Package Descriptor -->
         <package-name>https://exist-db.org/extensions/strings</package-name>
@@ -78,7 +80,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
-            <version>1.6</version>
+            <version>${commons-text.version}</version>
         </dependency>
 
         <!-- test dependencies -->
