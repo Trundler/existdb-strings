@@ -156,8 +156,8 @@
         collections, you can also increase the collectionCacheSize value 
     -->
     <db-connection cacheSize="256M" checkMaxCacheSize="true" collectionCache="64M" database="native"
-                   files="webapp/WEB-INF/data" pageSize="4096" nodesBuffer="1000" cacheShrinkThreshold="10000"
-                   doc-ids="default" minDiskSpace="128M">
+        files="webapp/WEB-INF/data" pageSize="4096" nodesBuffer="1000" cacheShrinkThreshold="10000"
+        doc-ids="default" minDiskSpace="128M">
 
         <!--
             Startup Triggers are executed before the database becomes generally available
@@ -168,12 +168,18 @@
                 <!--
                     Trigger for registering the GNU Crypto JCE Provider with Java
                 -->
-                <trigger class="org.exist.security.GnuCryptoJceProviderStartupTrigger"/>
+                <trigger class="org.exist.security.BouncyCastleJceProviderStartupTrigger"/>
 
                 <!--
                     Trigger for registering eXists XML:DB URL handler with Java
                 -->
-                <trigger class="org.exist.protocolhandler.URLStreamHandlerStartupTrigger"/>
+                <trigger class="org.exist.protocolhandler.URLStreamHandlerStartupTrigger">
+                    <!-- Keeps stream data on disk (temporary files are used for XML documents) -->
+                    <parameter name="mode" value="disk"/>
+
+                    <!-- Keep's stream data in memory -->
+                    <parameter name="mode" value="memory"/>
+                </trigger>
             </triggers>
         </startup>
 
@@ -224,7 +230,7 @@
                     the time out is switched off, resulting cached queries to remain     
                     in the cache forever.                                                
             -->
-        <query-pool max-stack-size="64" size="128" timeout="120000"
+        <query-pool max-stack-size="64" size="128" timeout="120000"                
                     timeout-check-interval="30000"/>
 
         <!--
@@ -296,8 +302,8 @@
                 and if inconsistencies are found in the db, it writes an emergency
                 backup to the same directory.
         -->
-        <recovery enabled="yes" group-commit="no" journal-dir="webapp/WEB-INF/data"
-                  size="100M" sync-on-commit="no" force-restart="no" consistency-check="yes"/>
+        <recovery enabled="yes"  group-commit="no"   journal-dir="webapp/WEB-INF/data" 
+                  size="100M" sync-on-commit="no"  force-restart="no"  consistency-check="yes"/>
 
         <!--
             This is the global configuration for the query watchdog. The 
@@ -360,7 +366,7 @@
     <binary-manager>
         <cache class="org.exist.util.io.FileFilterInputStreamCache"/>
     </binary-manager>
-
+    
     <!-- 
         Settings for the indexer:
         
@@ -385,7 +391,7 @@
             preserve the white space inside a mixed content node: "yes" or "no".
     -->
     <indexer caseSensitive="yes" index-depth="5" preserve-whitespace-mixed-content="no"
-             suppress-whitespace="none">
+        suppress-whitespace="none">
 
         <modules/>
 
@@ -457,7 +463,7 @@
         <!-- 
         <job class="bar.foo.myjob" period="600000" delay="300000" repeat="10" />
         -->
-
+        
         <!--
             Run a consistency check on the database. This will detect inconsistencies
             or corruptions in documents or the collection store. The task can also
@@ -490,7 +496,7 @@
             <parameter name="max" value="2"/>
         </job>
         -->
-
+        
         <!-- 
             Automatically creates a copy of the database .dbx files every 2 minutes
             
@@ -504,7 +510,7 @@
             <parameter name="output-dir" value="backup" />
         </job>
         -->
-
+        
     </scheduler>
 
     <!--
@@ -601,7 +607,7 @@
 
     -->
     <serializer add-exist-id="none" compress-output="no" enable-xinclude="yes"
-                enable-xsl="no" indent="yes" match-tagging-attributes="no"
+                enable-xsl="no" indent="yes" match-tagging-attributes="no" 
                 match-tagging-elements="no">
         <!--
             You may add as many custom-filters as you want, they will be executed
@@ -714,21 +720,22 @@
                 XML resource can not be retrieved. 
     -->
     <!-- TODO: add attribute 'enabled="yes/no"' -->
-    <xquery enable-java-binding="no" disable-deprecated-functions="no"
-            enable-query-rewriting="yes" backwardCompatible="no"
+    <xquery enable-java-binding="no" disable-deprecated-functions="no" 
+            enable-query-rewriting="yes" backwardCompatible="no" 
             enforce-index-use="always"
             raise-error-on-failed-retrieval="no">
 
         <builtin-modules>
-            <!--module uri="https://my-organisation.com/exist-db/ns/app/my-java-module" class="org.exist.extensions.ExampleModule"/-->
-            <module uri="http://exist-db.org/xquery/inspection"
-                    class="org.exist.xquery.functions.inspect.InspectionModule"/>
+            <module uri="http://exist-db.org/xquery/inspection" class="org.exist.xquery.functions.inspect.InspectionModule"/>
             <module uri="http://expath.org/ns/http-client" class="org.expath.exist.HttpClientModule"/>
-            <module uri="http://www.w3.org/2005/xpath-functions/map" class="org.exist.xquery.functions.map.MapModule"/>
-            <module uri="http://exist-db.org/xquery/util" class="org.exist.xquery.functions.util.UtilModule"/>
-            <module uri="http://exist-db.org/xquery/system" class="org.exist.xquery.functions.system.SystemModule"/>
-            <module uri="http://exist-db.org/xquery/xmldb" class="org.exist.xquery.functions.xmldb.XMLDBModule"/>
+            <module uri="http://www.w3.org/2005/xpath-functions/array" class="org.exist.xquery.functions.array.ArrayModule" />
+            <module uri="http://www.w3.org/2005/xpath-functions/map"  class="org.exist.xquery.functions.map.MapModule" />
+            <module uri="http://exist-db.org/xquery/util"       class="org.exist.xquery.functions.util.UtilModule"/>
+            <module uri="http://exist-db.org/xquery/system"     class="org.exist.xquery.functions.system.SystemModule" />
+            <module uri="http://exist-db.org/xquery/xmldb"      class="org.exist.xquery.functions.xmldb.XMLDBModule" />
         </builtin-modules>
+
+
     </xquery>
 
     <!-- 
