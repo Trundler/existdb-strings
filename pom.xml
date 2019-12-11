@@ -52,7 +52,7 @@
 
         <exist.version>4.7.0</exist.version>
 
-        <commons-text.version>1.6</commons-text.version>
+        <commons-text.version>1.8</commons-text.version>
 
         <!-- used in the EXPath Package Descriptor -->
         <package-name>https://exist-db.org/extensions/strings</package-name>
