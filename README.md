@@ -1,5 +1,5 @@
 # existdb-strings
-Utility extension module for eXist-db that provides a mix of string functions.
+Utility extension module for eXist-db that provides a mix of string functions. Requires eXist-db v5.x
 
 [![Build Status](https://travis-ci.com/Trundler/existdb-strings.svg?branch=master)](https://travis-ci.com/Trundler/existdb-strings)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/19086434c9804091a6accf62e204a19c)](https://www.codacy.com/app/dannes/existdb-strings?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Trundler/existdb-strings&amp;utm_campaign=Badge_Grade)
