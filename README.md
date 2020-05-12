@@ -10,7 +10,7 @@ Utility extension module for eXist-db that provides a mix of string functions.
 
 ### Distance
 
-Provides access to https://commons.apache.org/proper/commons-codec/
+Provides access to https://commons.apache.org/proper/commons-text/
 
 - cosine#2
 - hamming#2
@@ -18,7 +18,7 @@ Provides access to https://commons.apache.org/proper/commons-codec/
 
 ### Codec
 
-Provides access to https://commons.apache.org/proper/commons-text/ 
+Provides access to https://commons.apache.org/proper/commons-codec/  
 
 - caverphone1#1
 - caverphone2#2
